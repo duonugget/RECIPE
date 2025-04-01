@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Boxes with Activity Level</title>
+    <link rel="stylesheet" href="./updateInfo.css">
+    <style>
+        .notification {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="infoForm">
+            <div class="box">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="1" required>
+            </div>
+            <div class="box">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" step="0.01" required>
+            </div>
+            <div class="box">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" step="0.01" required>
+            </div>
+            <div class="box">
+                <label for="activity_level">Activity Level:</label>
+                <select id="activity_level" name="activity_level" required>
+                    <option value="Sedentary">Sedentary</option>
+                    <option value="Lightly active">Lightly active</option>
+                    <option value="Moderately active">Moderately active</option>
+                    <option value="Very active">Very active</option>
+                    <option value="Extremely active">Extremely active</option>
+                </select>
+            </div>
+            <div class="box">
+                <button type="submit" id="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="notification" id="notification"></div>
+    <script src="./updateInfo.js"></script>
+</body>
+</html>

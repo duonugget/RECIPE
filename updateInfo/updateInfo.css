@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background-image: url('./Background5.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(45deg, #ffcc80, #ffe0b2); /* Lighter orange gradient */
+    border-radius: 15px;
+    border: 3px solid #000; /* Black border */
+}
+
+.box {
+    width: 300px;
+    padding: 1.5rem;
+    color: #000; /* Black text color */
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-weight: 600; /* Make the text bolder */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.box input, .box select {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.box button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #ff7043; /* Darker orange button */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.box button:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+}

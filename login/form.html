@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up | Log In</title>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div class="loading-screen" id="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title login">
+                Welcome back
+            </div>
+            <div class="title signup">
+                Register
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login">Login</label>
+                <label for="signup" class="slide signup">SignUp</label>
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form action="#" class="login">
+                    <div class="field">
+                        <input type="text" id="login-username" placeholder="UserName" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <div class="pass-link">
+                        <a href="#">Reset password?</a>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" id="login-button" value="Login">
+                    </div>
+                    <div class="signup-link">
+                        Don't Have Account? <a href="">Create A New</a>
+                    </div>
+                    <div class="warning-box" id="warning-box">
+                        Incorrect username or password
+                        <button id="close-warning-box">Close</button>
+                     </div>
+                </form>
+                <form action="#" class="signup">
+                    <div class="field">
+                        <input type="text" id="signup-username" placeholder="UserName" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" id="signup-password" placeholder="Password" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" id="signup-button" value="SignUp">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./login.js"></script>
+</body>
+</html>

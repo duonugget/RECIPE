@@ -1,0 +1,519 @@
+/* General Reset and Font Import */
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --tenne-tawny: #d65108;
+    --tenne-tawny-dark: #b54507;
+}
+
+body {
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-family: "Poppins", sans-serif;
+}
+
+.btn {
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.05rem;
+}
+
+.text {
+    opacity: 0.8;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+.meal-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+}
+
+.meal-search {
+    margin: 2rem 0;
+}
+
+.meal-search cite {
+    font-size: 1rem;
+}
+
+.meal-search-box {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.search-control {
+    width: 60%; /* Adjust width as necessary */
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid var(--tenne-tawny);
+    color: var(--tenne-tawny);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.search-control::placeholder {
+    color: var(--tenne-tawny);
+}
+
+.search-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+    background: var(--tenne-tawny);
+    color: #fff;
+    border: none;
+    border-radius: 20%; /* Make it circular */
+    transition: all 0.4s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the text inside the button */
+    margin-left: -1px; /* To prevent gap between input and button */
+}
+
+.search-btn:hover {
+    background: var(--tenne-tawny-dark);
+}
+
+/* Other CSS rules as provided */
+
+
+.meal-result {
+    margin-top: 4rem;
+}
+
+.meal-container {
+    margin: 2.4rem 0;
+    padding: 1rem;
+    border: 2px solid var(--tenne-tawny);
+    border-radius: 1rem;
+}
+
+.meal-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.meal-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.meal-item {
+    flex: 1 1 calc(20% - 1rem); /* Adjust to fit 5 items per row */
+    box-sizing: border-box;
+    margin: 0; /* Reset margin added previously */
+    border: 2px solid var(--tenne-tawny);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .meal-item {
+        flex: 1 1 calc(25% - 1rem); /* Adjust for smaller screens */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .meal-item {
+        flex: 1 1 calc(33.33% - 1rem); /* Adjust for smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .meal-item {
+        flex: 1 1 calc(50% - 1rem); /* Adjust for smaller screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .meal-item {
+        flex: 1 1 100%; /* Adjust for very small screens */
+    }
+}
+
+.loading-screen {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-screen .spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #d65108;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.meal-img {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure the image doesn't overflow the container */
+}
+
+.meal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container while preserving aspect ratio */
+}
+
+.meal-name p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+.meal-name h3 {
+    font-size: 1.4rem;
+}
+
+.recipe-btn {
+    text-decoration: none;
+    color: #fff;
+    background: var(--tenne-tawny);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    transition: all 0.4s linear;
+}
+
+.recipe-btn:hover {
+    background: var(--tenne-tawny-dark);
+}
+
+/* meal details */
+.meal-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: var(--tenne-tawny);
+    border-radius: 1rem;
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    display: none;
+    padding: 2rem 0;
+}
+
+.meal-details::-webkit-scrollbar {
+    width: 10px;
+}
+
+.meal-details::-webkit-scrollbar-thumb {
+    background: #f0f0f0;
+    border-radius: 2rem;
+}
+
+.showRecipe {
+    display: block;
+}
+
+.meal-details-content {
+    margin: 2rem;
+}
+
+.meal-details-content p:not(.recipe-category) {
+    padding: 1rem 0;
+}
+
+.recipe-close-btn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.recipe-title {
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+}
+
+.recipe-category {
+    background: #fff;
+    font-weight: 600;
+    color: var(--tenne-tawny);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.recipe-instruct {
+    padding: 1rem 0;
+}
+
+.recipe-meal-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.recipe-link {
+    margin: 1.4rem 0;
+}
+
+.recipe-link a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s linear;
+}
+
+.recipe-link a:hover {
+    opacity: 0.8;
+}
+
+.notFound {
+    grid-template-columns: 1fr !important;
+    color: var(--tenne-tawny);
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* Media Queries */
+@media screen and (min-width: 600px) {
+    .meal-search-box {
+        width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .meal-details {
+        width: 700px;
+    }
+}
+
+.category {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--tenne-tawny);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.meal-type {
+    font-size: 1rem; /* Smaller text */
+    font-weight: bold;
+    color: var(--tenne-tawny); /* Use the web's orange color */
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.wrapper {
+    position: absolute;
+    top: 85px;
+    right: 20px;
+    background-color: #ddd7d7; /* Light grey background */
+    padding: 20px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 0px 10px #aba9a91a; /* Add shadow for depth */
+    z-index: 1;
+}
+
+#list div {
+    background-color: #fff; /* Same color as website */
+    border: 2px solid rgb(182, 107, 1); /* Border color */
+    width: 200px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    color: rgb(182, 107, 1); /* Text color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#list div h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.dropdown {
+    width: 200px;
+    position: relative;
+    z-index: 5;
+    margin: 0 10px;
+}
+
+#dropdownBtnQuery,
+#dropdownBtnSort,
+#dropdownBtnFilter {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #b84502;
+    color: white;
+    position: relative;
+}
+
+#dropdownBtnQuery i,
+#dropdownBtnSort i,
+#dropdownBtnFilter i {
+    float: right;
+    transform: rotate(0deg);
+}
+
+#dropdownBtnQuery::before,
+#dropdownBtnSort::before,
+#dropdownBtnFilter::before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: calc(100% - 20px);
+    background-color: var(--active-col);
+    left: 10px;
+    top: 2px;
+}
+
+#dropdownQueryOptions,
+#dropdownSortOptions,
+#dropdownFilterOptions {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    display: none;
+    background-color: #b84502;
+    flex-direction: column;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+.queryOption,
+.sortOption,
+.filterOption {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.queryOption span,
+.sortOption span,
+.filterOption span {
+    float: right;
+}
+
+.queryOption:hover,
+.sortOption:hover,
+.filterOption:hover {
+    background-color: #6E6E6E;
+}
+
+.selected {
+    position: relative;
+    color: hsl(53, 91%, 57%);
+}
+
+.selected::before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: calc(100% - 20px);
+    background-color: hsl(53, 63%, 51%);
+    left: 10px;
+    bottom: 7px;
+}
+
+#clearBtn {
+    height: 38.5px;
+    padding: 0 10px;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #b84502;
+    color: white;
+    margin-left: 20px;
+}
+#applyBtn {
+    height: 38.5px;
+    padding: 0 10px;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #b84502;
+    color: white;
+    margin-left: 20px;
+}
+
+#toggleWrapperBtn {
+    background-color: var(--tenne-tawny);
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute; /* Added absolute positioning */
+    top: 20px; /* Adjust top positioning as needed */
+    right: 20px;
+}
+
+#toggleWrapperBtn:hover {
+    background-color: var(--tenne-tawny-dark);
+}
